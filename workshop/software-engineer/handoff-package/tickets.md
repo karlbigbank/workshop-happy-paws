@@ -40,10 +40,10 @@ As a developer, I need a basic project structure so I can start building the app
 As a developer, I need the backend dependencies installed so I can start coding the API.
 
 **Acceptance Criteria**:
-- [ ] Install Express.js, TypeScript, and basic dependencies
-- [ ] Install Prisma ORM and PostgreSQL client
-- [ ] Install JWT, bcrypt, and validation libraries
-- [ ] Configure TypeScript compilation
+- [x] Install Express.js, TypeScript, and basic dependencies
+- [x] Install Prisma ORM and PostgreSQL client
+- [x] Install JWT, bcrypt, and validation libraries
+- [x] Configure TypeScript compilation
 
 ---
 
