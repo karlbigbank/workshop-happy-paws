@@ -74,10 +74,10 @@ As a developer, I need the frontend dependencies installed so I can start buildi
 As a developer, I need a working development environment so I can run and test the application locally.
 
 **Acceptance Criteria**:
-- [ ] Set up environment variables configuration
-- [ ] Configure hot reload for backend and frontend
-- [ ] Create basic npm scripts for running both projects
-- [ ] Create data directory structure for JSON files
+- [x] Set up environment variables configuration
+- [x] Configure hot reload for backend and frontend
+- [x] Create basic npm scripts for running both projects
+- [x] Create data directory structure for JSON files
 
 ---
 
