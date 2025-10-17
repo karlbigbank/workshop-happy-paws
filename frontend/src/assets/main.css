@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-gray-900 bg-gray-50;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+
+  .status-available {
+    @apply bg-shelter-green text-white;
+  }
+
+  .status-foster {
+    @apply bg-shelter-orange text-white;
+  }
+
+  .status-adopted {
+    @apply bg-shelter-gray text-white;
+  }
+
+  .status-medical {
+    @apply bg-shelter-red text-white;
+  }
+}

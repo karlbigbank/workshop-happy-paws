@@ -57,10 +57,10 @@ As a developer, I need the backend dependencies installed so I can start coding 
 As a developer, I need the frontend dependencies installed so I can start building the UI.
 
 **Acceptance Criteria**:
-- [ ] Initialize Vue 3 project with Vite
-- [ ] Install TypeScript, Tailwind CSS, and Vue Router
-- [ ] Install Pinia, Axios, and VeeValidate
-- [ ] Configure Vite build settings
+- [x] Initialize Vue 3 project with Vite
+- [x] Install TypeScript, Tailwind CSS, and Vue Router
+- [x] Install Pinia, Axios, and VeeValidate
+- [x] Configure Vite build settings
 
 ---
 
