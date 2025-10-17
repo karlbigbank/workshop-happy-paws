@@ -17,22 +17,22 @@ The Pet Shelter Registry System is a web-based application designed to streamlin
 ### High-Level Architecture
 
 ```
-[Client Apps] → [Load Balancer] → [Web Application] → [Database]
+[Client Apps] → [Load Balancer] → [Web Application] → [JSON File Storage]
                                         ↓
-                                 [File Storage]
+                                 [File Storage for Images]
 ```
 
 ### Technology Stack Recommendations
 
 #### Backend
 - **Runtime**: Node.js 18+ with Express.js 4.x
-- **Database**: PostgreSQL 14+ (ACID compliance for adoption workflows)
-- **ORM**: Prisma or Sequelize for database operations
-- **File Storage**: AWS S3 or compatible (Cloudflare R2, MinIO for self-hosting)
+- **Database**: JSON file storage with fs-extra for file operations
+- **Data Validation**: Zod for schema validation and type safety
+- **File Storage**: Local file system for pet images (expandable to S3)
 - **Authentication**: JWT tokens with refresh mechanism using jsonwebtoken library
-- **Validation**: Joi or Zod for request validation
 - **API**: RESTful API with OpenAPI documentation (Swagger)
 - **Testing**: Jest for unit tests, Supertest for API testing
+- **Data Management**: Custom JSON database layer with atomic writes and data integrity
 
 #### Frontend
 - **Framework**: Vue 3 with Composition API and TypeScript
@@ -119,6 +119,45 @@ interface User {
   createdAt: Date;
 }
 ```
+
+## JSON File Storage Architecture
+
+### Data Storage Strategy
+The system uses a simple but robust JSON file-based storage approach suitable for small to medium-sized shelters:
+
+#### File Structure
+```
+data/
+├── pets.json           # All pet records
+├── users.json          # Staff user accounts
+├── applications.json   # Adoption applications
+├── medical-records.json # Medical history records
+└── backups/           # Automated backup files
+    ├── pets-YYYY-MM-DD.json
+    ├── users-YYYY-MM-DD.json
+    └── ...
+```
+
+#### Data Integrity Features
+- **Atomic Writes**: Use temporary files and rename operations to prevent corruption
+- **Data Validation**: Zod schemas validate all data before writing
+- **Backup Strategy**: Automatic daily backups with configurable retention
+- **Concurrent Access**: File locking to prevent race conditions
+- **Error Recovery**: Automatic recovery from backup if main files are corrupted
+
+#### JSON Database Layer
+Custom database abstraction providing:
+- CRUD operations with TypeScript interfaces
+- Query capabilities (filter, sort, paginate)
+- Relationship management between entities
+- Data migration utilities for schema changes
+- Performance optimization with in-memory caching
+
+#### Scalability Considerations
+- **Migration Path**: Easy migration to PostgreSQL when growth demands it
+- **Performance**: In-memory indexing for fast queries
+- **Backup & Restore**: Simple file-based backup and restore procedures
+- **Data Export**: Built-in CSV export for reporting and migration
 
 ## API Endpoints
 

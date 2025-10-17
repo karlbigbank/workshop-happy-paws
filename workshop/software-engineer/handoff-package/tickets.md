@@ -41,7 +41,7 @@ As a developer, I need the backend dependencies installed so I can start coding 
 
 **Acceptance Criteria**:
 - [x] Install Express.js, TypeScript, and basic dependencies
-- [x] Install Prisma ORM and PostgreSQL client
+- [ ] Install fs-extra for JSON file operations and uuid for ID generation
 - [x] Install JWT, bcrypt, and validation libraries
 - [x] Configure TypeScript compilation
 
@@ -67,34 +67,35 @@ As a developer, I need the frontend dependencies installed so I can start buildi
 ### Story #4 - Development Environment Setup
 **Type**: Setup  
 **Priority**: Critical  
-**Story Points**: 3  
+**Story Points**: 2  
 **Phase**: 1  
 
 **Description**:
 As a developer, I need a working development environment so I can run and test the application locally.
 
 **Acceptance Criteria**:
-- [ ] Create Docker Compose file for PostgreSQL
 - [ ] Set up environment variables configuration
 - [ ] Configure hot reload for backend and frontend
 - [ ] Create basic npm scripts for running both projects
+- [ ] Create data directory structure for JSON files
 
 ---
 
-### Story #5 - Database Connection and Basic Schema
+### Story #5 - JSON Database Layer and Basic Schema
 **Type**: Backend  
 **Priority**: Critical  
-**Story Points**: 3  
+**Story Points**: 4  
 **Phase**: 1  
 
 **Description**:
-As a developer, I need a database connection so I can store application data.
+As a developer, I need a JSON file storage system so I can store application data.
 
 **Acceptance Criteria**:
-- [ ] Set up PostgreSQL database with Docker
-- [ ] Configure Prisma connection to database
-- [ ] Create basic Pet model with essential fields
-- [ ] Run first migration successfully
+- [ ] Create JSON database abstraction layer with CRUD operations
+- [ ] Set up data directory structure (pets.json, users.json, etc.)
+- [ ] Implement atomic write operations with file locking
+- [ ] Create basic Pet data schema validation with Zod
+- [ ] Add error handling and data recovery mechanisms
 
 ---
 
@@ -108,10 +109,11 @@ As a developer, I need a database connection so I can store application data.
 As a developer, I need user authentication models so staff can log into the system.
 
 **Acceptance Criteria**:
-- [ ] Create User model with email, password, role fields
+- [ ] Create User interface and Zod schema validation
 - [ ] Set up password hashing with bcrypt
-- [ ] Create database migration for users table
+- [ ] Initialize users.json file with proper structure
 - [ ] Add seed data for first admin user
+- [ ] Implement user CRUD operations in JSON database layer
 
 ---
 
