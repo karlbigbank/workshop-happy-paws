@@ -23,10 +23,10 @@ This document contains focused user stories to implement the MVP for the Pet She
 As a developer, I need a basic project structure so I can start building the application.
 
 **Acceptance Criteria**:
-- [ ] Create root folder with backend and frontend subfolders
-- [ ] Initialize package.json files for both projects
-- [ ] Set up basic folder structure (src, controllers, models, etc.)
-- [ ] Create .gitignore files for both projects
+- [x] Create root folder with backend and frontend subfolders
+- [x] Initialize package.json files for both projects
+- [x] Set up basic folder structure (src, controllers, models, etc.)
+- [x] Create .gitignore files for both projects
 
 ---
 
